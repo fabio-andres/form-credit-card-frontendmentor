@@ -10,4 +10,4 @@ this is a form for credit card for mobile. this is a challenge solved from www.f
 
 view on mobile
 
-[click here to see the project](https://fabio-andres.github.io/rating-card/)
+[click here to see the project](https://fabio-andres.github.io/form-credit-card/)
