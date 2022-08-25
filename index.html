@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="normalize.css" rel="stylesheet" type="text/css" />
+  <link href="mobile.css" rel="stylesheet" type="text/css" />
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+
+<body>
+  <section>
+    <img class="main-background" src="./images/bg-main-mobile.png" alt="main background">
+    <img class="card-back" src="./images/bg-card-back.png" alt="card back">
+    <img class="card-front" src="./images/bg-card-front.png" alt="card front">
+    <p class="card-back-text">000</p>
+    <p class="card-front-text1">0000 0000 0000 0000</p>
+    <p class="card-front-text2">your name</p>
+    <p class="card-front-text3">00/00</p>
+    <img class="card-logo" src="./images/card-logo.svg" alt="main background">
+  </section>
+
+  <section class="s1">
+    <form>
+      <div class="inputs-name-num">
+        <label for="name">CARDHOLDER NAME</label>
+        <input id="name" type="text" name="name" placeholder="e.g Andres Zarate">
+      </div>
+      <div class="inputs-name-num">
+        <label for="num">CARD NUMBER</label>
+        <input id="num" type="text" name="num" placeholder="e.g 1234 5678 9123 000">
+      </div>
+      <label for="date">EXP. DATE (MM/YY)</label>
+      <label class="cvc" for="cvc">CVC</label>
+      <div class="inputs-date-cvc">
+        <input class="inputs-date" name="month" type="text" placeholder="MM">
+        <input class="inputs-date" type="text" name="year" placeholder="YY">
+        <input id="cvc" type="text" name="cvc" placeholder="e.g 123">
+      </div>
+      <button class="bu">Confirm</button>
+    </form>
+
+    <div class="sec2">
+      <img src="./images/icon-complete.svg" alt="">
+      <p class="thank">THANK YOU!</p>
+      <p class="text">We've added your card details</p>
+      <button class="butt">Continue</button>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>

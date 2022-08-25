@@ -1,0 +1,175 @@
+:root {
+    --Linear-gradient: linear-gradient(20deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));/*color del borde de los inputs al seleccionarlo*/
+    --Red: hsl(0, 100%, 66%);/*este color se muestra en el borde de los inputs al ingresar mal un dato*/
+
+
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(286, 8%, 68%);
+    --Very-dark-violet: hsl(278, 73%, 22%);
+    font-size: 62.5%;
+    /*es el 62.5% de 16px que es el valor por defecto de 1rem, de esta forma ahora 1rem = 10px, 1.5rem = 15px, etc.*/
+    font-family: 'DM Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main-background{
+    width: 100%;
+    margin-bottom: 65px;
+   /*  position: absolute;
+    z-index: 10; */
+}
+
+.card-back{ 
+    width: 80%;
+    height: 28%;
+    position: absolute;
+    left: 60px;
+    top: 25px;
+    z-index: 20;
+}
+
+.card-front{ 
+    width: 80%;
+    height: 28%;
+    position: absolute;
+    top: 112px;
+    left: 14px;
+    z-index: 30;
+}
+
+.card-back-text{
+    position: absolute;
+    top: 14.5%;
+    left: 80%;
+    z-index: 22;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.card-front-text1{
+    position: absolute;
+    top: 34%;
+    left: 8%;
+    z-index: 32;
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: 0.4rem;
+}
+
+.card-front-text2{
+    position: absolute;
+    top: 41%;
+    left: 8%;
+    z-index: 32;
+    color: white;
+    font-size: 1.2rem;  
+}
+
+.card-front-text3{
+    position: absolute;
+    top: 41%;
+    left: 67%;
+    z-index: 32;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.card-logo{
+    position: absolute;
+    top: 23%;
+    left: 9%;
+    z-index: 32;
+}
+
+form{
+    color: var(--Very-dark-violet);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+input{
+    height: 30px;
+    border-radius: 6px;
+    border-color: var(--Light-grayish-violet);
+}
+
+input::placeholder{
+    color: var(--Dark-grayish-violet);
+}
+
+input:focus{
+    outline: none;
+    border-image: var(--Linear-gradient);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-radius: 10px;
+} 
+
+.inputs-name-num{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.cvc{
+    position: relative;
+    left: 32px;
+}
+
+.inputs-date-cvc{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.inputs-date{
+    width: 16%;
+}
+
+button{
+    width: 100%;
+    background-color: var(--Very-dark-violet);
+    color: var(--Light-grayish-violet);
+    border-radius: 6px;
+    padding: 9px;
+    border: none;
+    font-size: 1.5rem;
+}
+
+
+.sec2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    bottom: 20px;
+}
+
+.hide{
+    display: none;
+}
+
+.thank{
+font-size: 2rem;
+}
+
+.text{
+    font-size: 1.5rem;
+
+}
+
+.butt{
+    width: 90%;
+}
+
+
+
+
+
+
