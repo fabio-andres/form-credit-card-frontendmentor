@@ -23,3 +23,4 @@ function sendForm(e) {
     form.classList.add("hide")
 
 }
+
