@@ -21,6 +21,4 @@ function sendForm(e) {
     section2.classList.remove("hide")
 
     form.classList.add("hide")
-
 }
-
