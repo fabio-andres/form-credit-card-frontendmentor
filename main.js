@@ -56,38 +56,39 @@ function checkInputs() {
     if (allInputs[1].value === "") {
       setErrorFor(allInputs[1], "Can't be blank", 0);
     } 
-  /*else if (!isCardNumber(cardValue)) {
-      setErrorFor(card, "Length must be 16");
-    } else {
+  else if (!isCardNumber(allInputs[1].value)) {
+      setErrorFor(allInputs[1], "Length must be 16");
+  }
+ /*else {
       setSuccessFor(card);
     }*/
   
     if (allInputs[2].value === "") {
       setErrorFor(allInputs[2], "Can't be blank", 0);
-    }/*  else if (!isYear(yearValue)) {
-      setErrorFor(year, "Invalid format");
-    } else {
+    }  else if (!isMonth(allInputs[2].value)) {
+      setErrorFor(allInputs[2], "Length must be 2");
+    } /*else {
       setSuccessFor(year); */
     
   
     if (allInputs[3].value === "") {
       setErrorFor(allInputs[3], "Can't be blank", 0);
     }
-    /*else if (!isMonth(monthValue)) {
-      setErrorFor(month, "Invalid format");
-    } else {
+    else if (!isYear(allInputs[3].value)) {
+      setErrorFor(allInputs[3], "Length must be 2");
+    } /*else {
       setSuccessFor(month);
     }*/
   
     if (allInputs[4].value === "") {
       setErrorFor(allInputs[4], "Can't be blank", 0);
-    } /*else if (!isCvc(cvcValue)) {
-      setErrorFor(cvc, "Length must be 3-4");
-    } else {
+    } else if (!isCvc(allInputs[4].value)) {
+      setErrorFor(allInputs[4], "Length must be 3");
+    } /*else {
       setSuccessFor(cvc);
     }*/
   
-    //si todos los inputs tienen un valor entonces ocultar los inputs y mostrar la seccion 2
+    //si todos los inputs tienen un valor correcto entonces ocultar los inputs y mostrar la seccion 2
     if (allInputs[0].value && allInputs[1].value && allInputs[2].value && allInputs[3].value && allInputs[4].value) {
     section2.classList.remove("hide")
     form.classList.add("hide") 
@@ -98,31 +99,29 @@ function checkInputs() {
   function setErrorFor(input, message) {
     const formControl = input.parentElement; //se selecciona el contenedor padre del input enviado
     const span = formControl.querySelector("span");//del contenedor padre seleccionar el elemento span
-    input.classList.add("input-error")//se añade la clase input-error para poner un borde rojo al input
+    input.classList.add("input-error")//se añade la clase input-error para poner un borde rojo al input cuando se envia el formulario con erorres
+    span.innerText = ""//limpia el texto que haya en el span
     span.innerText = message;
-  }
-  /* function setSuccessFor(input, message) {
-    const formControl = input.parentElement; //.form-control
-    formControl.className = "form-control success";
   }
   
   function isCardNumber(card) {
-    let number = /^[0-9]{16}$/;
+    let number = /^[0-9]{16}$/;//solo se pueden ingresar 16 numeros del 0 al 9
     return number.test(card);
   }
   
-  function isYear(year) {
+  function isMonth(month) {
     let yearNumber = /^[0-9]{2}$/g;
-    return yearNumber.test(year);
+    return yearNumber.test(month);
   }
   
-  function isMonth(month) {
+  function isYear(year) {
     let monthNumber = /^(0[1-9]|1[0-2])/;
-    return monthNumber.test(month);
+    return monthNumber.test(year);
   }
+
   function isCvc(cvc) {
     let digits = /^[0-9]{3,4}$/;
     return digits.test(cvc);
   }
- */
+
 
