@@ -17,26 +17,43 @@
 
 .main-background{
     width: 100%;
+    height: 210px;
     margin-bottom: 65px;
    /*  position: absolute;
     z-index: 10; */
 }
 
 .card-back{ 
-    width: 82%;
-    height: 30%;
+    width: 79%;
+    height: 27%;
     position: absolute;
     left: 50px;
-    top: 32px;
+    top: 28px;
     z-index: 20;
 }
 
-.card-front{
-    width: 82%;
-    height: 30%;
+.card-back-image{ 
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 50;
-    bottom: 246px;
+    z-index: 22;
+}
+
+.card-cvc{
+    position: absolute;
+    top: 33%;
+    left: 80%;
+    z-index: 25;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.card-front{
+    width: 79%;
+    height: 27%;
+    position: absolute;
+    z-index: 29;
+    bottom: 275px;
     left: 15px;
 }
 
@@ -47,16 +64,9 @@
     z-index: 30;
 }
 
-.card-back-text{
-    position: absolute;
-    top: 16.5%;
-    left: 80%;
-    z-index: 22;
-    color: white;
-    font-size: 1.5rem;
-}
 
-.card-front-text1{
+
+.card-number{
     position: absolute;
     z-index: 32;
     left: 8%;
@@ -66,20 +76,36 @@
     letter-spacing: 0.4rem;
 }
 
-.card-front-text2{
+.card-name{
     position: absolute;
     z-index: 32;
     left: 8%;
     top: 72%;
     color: white;
-    font-size: 1.3rem;  
+    font-size: 1.4rem;  
 }
 
-.card-front-text3{
+.card-month{
     position: absolute;
     z-index: 32;
     left: 80%;
-    top: 72%;
+    top: 79%;
+    color: white;
+    font-size: 1.3rem;
+}
+.card-year{
+    position: absolute;
+    z-index: 32;
+    left: 87%;
+    top: 79%;
+    color: white;
+    font-size: 1.3rem;
+}
+.card-slash{
+    position: absolute;
+    z-index: 32;
+    left: 85%;
+    top: 79%;
     color: white;
     font-size: 1.3rem;
 }
@@ -109,10 +135,19 @@ input{
     border-color: var(--Light-grayish-violet);
 }
 
+/*añade un borde con color rojo cuando se envia el formulario y se deja un input en blanco o cuando se ingesa un dato incorrecto*/
+.input-error{
+    height: 30px;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: red;
+}
+
 input::placeholder{
     color: var(--Dark-grayish-violet);
 }
 
+/*añade un borde con color gradiente al seleccionar un input*/
 input:focus{
     outline: none;
     border-image: var(--Linear-gradient);
@@ -127,19 +162,25 @@ input:focus{
     margin-bottom: 16px;
 }
 
-.cvc{
-    position: relative;
-    left: 32px;
-}
-
 .inputs-date-cvc{
     display: flex;
     justify-content: space-between;
     margin-bottom: 16px;
 }
 
+/*ancho de los inputs month y year*/
 .inputs-date{
-    width: 16%;
+    width: 79%;
+}
+
+.label-inputs{
+    font-size: 1.1rem;
+    color: red;
+}
+
+.label-cvc{
+   position: relative;
+   left: 34px;
 }
 
 button{
@@ -152,14 +193,13 @@ button{
     font-size: 1.5rem;
 }
 
-
 .sec2{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    bottom: 20px;
+    bottom: 2px;
 }
 
 .hide{
@@ -177,9 +217,13 @@ font-size: 2rem;
     bottom: 20px;
 }
 
-.butt{
+.btn-confirm{
     width: 90%;
 }
+
+
+
+
 
 
 
