@@ -8,9 +8,10 @@ const cardCvc = document.querySelector(".card-cvc")
 const section2 = document.querySelector(".sec2")
 const allInputs = document.querySelectorAll("input")
 
+//apenas inicie el programa ocultar la seccion 2
 section2.classList.add("hide")
 
-//elimina la clase input-error de todos los inputs ya que esa clase solo se debe agregar cuando se envia el formulario con el input en blanco
+//elimina la clase input-error de todos los inputs ya que esa clase solo se debe agregar cuando se envia el formulario con errores. dicha clase añade un bordes de color rojo a los inputs
 allInputs.forEach(input => {
   input.classList.remove("input-error")
 })
@@ -18,7 +19,7 @@ allInputs.forEach(input => {
 //esta funcion se ejecuta al ocurrir el evento input. esta funcion permite que al escribir en un input el mismo texto aparezca en la tarjeta
 function dataCard(e) {
 
-  //si el input en su atributo name tiene como valor name eso quiere decir que estamos escribiendo en el input name entonces en ese caso lo que se escriba en el input ponerlo en la tarjeta
+  //si el input en su atributo name tiene como valor name eso quiere decir que estamos escribiendo en el input name entonces en ese caso lo que se escriba en ese input ponerlo en la tarjeta
   if (e.target.getAttribute("name") === "name") {
     cardName.textContent = e.target.value
   }
@@ -40,12 +41,14 @@ allInputs.forEach(input => {
   input.addEventListener("input", dataCard)
 })
 
+//esta funcion se ejecuta al ocurrir el evento submit, osea, al enviar un formulario
 function sendForm(e) {
   e.preventDefault();
   checkInputs();
 }
 form.addEventListener('submit', sendForm)
 
+//esta funcion verifica si los datos ingresados en los inputs son correctos
 function checkInputs() {
   //allInputs[0] es el pimer input declarado en el codigo html
   if (allInputs[0].value === "") {
@@ -108,7 +111,7 @@ function checkInputs() {
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; //se selecciona el contenedor padre del input enviado
-  const span = formControl.querySelector("span");//del contenedor padre seleccionar el elemento span
+  const span = formControl.querySelector("span");//del contenedor padre seleccionado en la linea anterior seleccionar su hijo span
   input.classList.add("input-error")//se añade la clase input-error para poner un borde rojo al input cuando se envia el formulario con erorres
   span.innerText = ""//limpia el texto que haya en el span
   span.innerText = message;
