@@ -16,7 +16,7 @@ allInputs.forEach(input => {
   input.classList.remove("input-error")
 })
 
-//esta funcion se ejecuta al ocurrir el evento input. esta funcion permite que al escribir en un input el mismo texto aparezca en la tarjeta
+//esta funcion se ejecuta al ocurrir el evento input, osea, el evento input se activa cuando en un formulario se ingresan datos en un <input>, <textarea> o <select>. esta funcion permite que al escribir en un input el mismo texto aparezca en la tarjeta
 function dataCard(e) {
 
   //si el input en su atributo name tiene como valor name eso quiere decir que estamos escribiendo en el input name entonces en ese caso lo que se escriba en ese input ponerlo en la tarjeta
@@ -36,8 +36,8 @@ function dataCard(e) {
     cardCvc.textContent = e.target.value
   }
 }
+//a todos los inputs se les añade el evento input cada vez que se ejecute la funcion dataCard
 allInputs.forEach(input => {
-  //el evento input se activa cuando en un formulario se ingresan datos en un <input>, <textarea> o <select>
   input.addEventListener("input", dataCard)
 })
 
@@ -48,13 +48,15 @@ function sendForm(e) {
 }
 form.addEventListener('submit', sendForm)
 
-//esta funcion verifica si los datos ingresados en los inputs son correctos
+//esta funcion verifica si los datos ingresados en los inputs son correctos. en cada input se verifican 3 cosas, que no este vacio, que los datos sean de un mismo tipo y que la longitud de los datos ingresados sea correcta
 function checkInputs() {
-  //allInputs[0] es el pimer input declarado en el codigo html
+
+  //allInputs[0] es el primer input declarado en el codigo html
   if (allInputs[0].value === "") {
     setErrorFor(allInputs[0], "Can't be blank", 0);
-  }  //* else {
-  //setSuccessFor(allInputs[0])
+  } else if (!charLenght(allInputs[0].value)) {//si no se cumple la regexp ejecutar setError()
+    setErrorFor(allInputs[0], "Max length must be 80");
+  }
 
 
   if (allInputs[1].value === "") {
@@ -71,9 +73,9 @@ function checkInputs() {
 
   if (allInputs[2].value === "") {
     setErrorFor(allInputs[2], "Can't be blank", 0);
-  }else if (onlyNumber(allInputs[2].value)) {
+  } else if (onlyNumber(allInputs[2].value)) {
     setErrorFor(allInputs[2], "Input must be only numbers");
-}
+  }
   else if (!isMonth(allInputs[2].value)) {
     setErrorFor(allInputs[2], "Length must be 2");
   } /*else {
@@ -82,9 +84,9 @@ function checkInputs() {
 
   if (allInputs[3].value === "") {
     setErrorFor(allInputs[3], "Can't be blank", 0);
-  }else if (onlyNumber(allInputs[3].value)) {
+  } else if (onlyNumber(allInputs[3].value)) {
     setErrorFor(allInputs[3], "Input must be only numbers");
-}
+  }
   else if (!isYear(allInputs[3].value)) {
     setErrorFor(allInputs[3], "Length must be 2");
   } /*else {
@@ -95,7 +97,7 @@ function checkInputs() {
     setErrorFor(allInputs[4], "Can't be blank", 0);
   } else if (onlyNumber(allInputs[4].value)) {
     setErrorFor(allInputs[4], "Input must be only numbers");
-}else if (!isCvc(allInputs[4].value)) {
+  } else if (!isCvc(allInputs[4].value)) {
     setErrorFor(allInputs[4], "Length must be 3");
   } /*else {
       setSuccessFor(cvc);
@@ -117,8 +119,12 @@ function setErrorFor(input, message) {
   span.innerText = message;
 }
 
+function charLenght(card) {
+  let number = /^[a-z]{2,80}$/;//solo se pueden ingresar maximo 80 letras de la a hasta la z
+  return number.test(card);
+}
 function onlyNumberLenght(card) {
-  let number = /^[0-9]{16}$/;//solo se pueden ingresar 16 numeros del 0 al 9
+  let number = /^[0-9]{16}$/;//solo se pueden ingresar exactamanete 16 numeros del 0 al 9
   return number.test(card);
 }
 
