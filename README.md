@@ -1,4 +1,4 @@
-# rating card
+# credit card
 
 this is a form for credit card for mobile. this is a challenge solved from www.frontenmentor.io
 
